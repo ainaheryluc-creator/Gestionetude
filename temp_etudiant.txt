@@ -1,0 +1,371 @@
+﻿  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 (0)
+              4 LOAD_CONST               1 (('get_collection',))
+              6 IMPORT_NAME              0 (db)
+              8 IMPORT_FROM              1 (get_collection)
+             10 STORE_NAME               1 (get_collection)
+             12 POP_TOP
+
+  2          14 LOAD_CONST               0 (0)
+             16 LOAD_CONST               2 (('ObjectId',))
+             18 IMPORT_NAME              2 (bson.objectid)
+             20 IMPORT_FROM              3 (ObjectId)
+             22 STORE_NAME               3 (ObjectId)
+             24 POP_TOP
+
+  3          26 LOAD_CONST               0 (0)
+             28 LOAD_CONST               3 (('InvalidId',))
+             30 IMPORT_NAME              4 (bson.errors)
+             32 IMPORT_FROM              5 (InvalidId)
+             34 STORE_NAME               5 (InvalidId)
+             36 POP_TOP
+
+  5          38 PUSH_NULL
+             40 LOAD_BUILD_CLASS
+             42 LOAD_CONST               4 (<code object Etudiant at 0x000001A4030291B0, file "models/etudiant.py", line 5>)
+             44 MAKE_FUNCTION            0
+             46 LOAD_CONST               5 ('Etudiant')
+             48 CALL                     2
+             56 STORE_NAME               6 (Etudiant)
+             58 RETURN_CONST             6 (None)
+
+Disassembly of <code object Etudiant at 0x000001A4030291B0, file "models/etudiant.py", line 5>:
+  5           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('Etudiant')
+              8 STORE_NAME               2 (__qualname__)
+
+  6          10 LOAD_NAME                3 (staticmethod)
+
+  7          12 LOAD_CONST               1 (<code object collection at 0x000001A40330A250, file "models/etudiant.py", line 6>)
+             14 MAKE_FUNCTION            0
+
+  6          16 CALL                     0
+
+  7          24 STORE_NAME               4 (collection)
+
+ 10          26 LOAD_NAME                3 (staticmethod)
+
+ 11          28 LOAD_CONST               2 (<code object creer at 0x000001A403001A70, file "models/etudiant.py", line 10>)
+             30 MAKE_FUNCTION            0
+
+ 10          32 CALL                     0
+
+ 11          40 STORE_NAME               5 (creer)
+
+ 29          42 LOAD_NAME                3 (staticmethod)
+
+ 30          44 LOAD_CONST               3 (<code object tous at 0x000001A402FC1D70, file "models/etudiant.py", line 29>)
+             46 MAKE_FUNCTION            0
+
+ 29          48 CALL                     0
+
+ 30          56 STORE_NAME               6 (tous)
+
+ 33          58 LOAD_NAME                3 (staticmethod)
+
+ 34          60 LOAD_CONST               4 (<code object chercher_par_id at 0x000001A402FA1210, file "models/etudiant.py", line 33>)
+             62 MAKE_FUNCTION            0
+
+ 33          64 CALL                     0
+
+ 34          72 STORE_NAME               7 (chercher_par_id)
+
+ 41          74 LOAD_NAME                3 (staticmethod)
+
+ 42          76 LOAD_CONST               5 (<code object chercher_par_matricule at 0x000001A402FD2450, file "models/etudiant.py", line 41>)
+             78 MAKE_FUNCTION            0
+
+ 41          80 CALL                     0
+
+ 42          88 STORE_NAME               8 (chercher_par_matricule)
+
+ 45          90 LOAD_NAME                3 (staticmethod)
+
+ 46          92 LOAD_CONST               6 (<code object modifier at 0x000001A402F7D5F0, file "models/etudiant.py", line 45>)
+             94 MAKE_FUNCTION            0
+
+ 45          96 CALL                     0
+
+ 46         104 STORE_NAME               9 (modifier)
+
+ 61         106 LOAD_NAME                3 (staticmethod)
+
+ 62         108 LOAD_CONST               7 (<code object supprimer at 0x000001A403001C30, file "models/etudiant.py", line 61>)
+            110 MAKE_FUNCTION            0
+
+ 61         112 CALL                     0
+
+ 62         120 STORE_NAME              10 (supprimer)
+            122 RETURN_CONST             8 (None)
+
+Disassembly of <code object collection at 0x000001A40330A250, file "models/etudiant.py", line 6>:
+  6           0 RESUME                   0
+
+  8           2 LOAD_GLOBAL              1 (NULL + get_collection)
+             12 LOAD_CONST               1 ('etudiants')
+             14 CALL                     1
+             22 RETURN_VALUE
+
+Disassembly of <code object creer at 0x000001A403001A70, file "models/etudiant.py", line 10>:
+ 10           0 RESUME                   0
+
+ 12           2 LOAD_GLOBAL              0 (Etudiant)
+             12 LOAD_ATTR                3 (NULL|self + collection)
+             32 CALL                     0
+             40 LOAD_ATTR                5 (NULL|self + find_one)
+             60 LOAD_CONST               1 ('matricule')
+             62 LOAD_FAST                0 (matricule)
+             64 BUILD_MAP                1
+             66 CALL                     1
+             74 STORE_FAST               7 (existe)
+
+ 13          76 LOAD_FAST                7 (existe)
+             78 POP_JUMP_IF_FALSE       16 (to 112)
+
+ 14          80 LOAD_GLOBAL              7 (NULL + print)
+             90 LOAD_CONST               2 ("Un Útudiant avec le matricule '")
+             92 LOAD_FAST                0 (matricule)
+             94 FORMAT_VALUE             0
+             96 LOAD_CONST               3 ("' existe dÚjÓ.")
+             98 BUILD_STRING             3
+            100 CALL                     1
+            108 POP_TOP
+
+ 15         110 RETURN_CONST             4 (False)
+
+ 17     >>  112 LOAD_FAST                0 (matricule)
+
+ 18         114 LOAD_FAST                1 (nom)
+
+ 19         116 LOAD_FAST                2 (prenom)
+
+ 20         118 LOAD_FAST                3 (email)
+
+ 21         120 LOAD_FAST                4 (telephone)
+
+ 22         122 LOAD_FAST                5 (date_naissance)
+
+ 23         124 LOAD_FAST                6 (adresse)
+
+ 16         126 LOAD_CONST               5 (('matricule', 'nom', 'prenom', 'email', 'telephone', 'date_naissance', 'adresse'))
+            128 BUILD_CONST_KEY_MAP      7
+            130 STORE_FAST               8 (etudiant)
+
+ 25         132 LOAD_GLOBAL              0 (Etudiant)
+            142 LOAD_ATTR                3 (NULL|self + collection)
+            162 CALL                     0
+            170 LOAD_ATTR                9 (NULL|self + insert_one)
+            190 LOAD_FAST                8 (etudiant)
+            192 CALL                     1
+            200 STORE_FAST               9 (result)
+
+ 26         202 LOAD_GLOBAL              7 (NULL + print)
+            212 LOAD_CONST               6 ("╔tudiant crÚÚ avec l'ID : ")
+            214 LOAD_FAST                9 (result)
+            216 LOAD_ATTR               10 (inserted_id)
+            236 FORMAT_VALUE             0
+            238 BUILD_STRING             2
+            240 CALL                     1
+            248 POP_TOP
+
+ 27         250 RETURN_CONST             7 (True)
+
+Disassembly of <code object tous at 0x000001A402FC1D70, file "models/etudiant.py", line 29>:
+ 29           0 RESUME                   0
+
+ 31           2 LOAD_GLOBAL              1 (NULL + list)
+             12 LOAD_GLOBAL              2 (Etudiant)
+             22 LOAD_ATTR                5 (NULL|self + collection)
+             42 CALL                     0
+             50 LOAD_ATTR                7 (NULL|self + find)
+             70 CALL                     0
+             78 CALL                     1
+             86 RETURN_VALUE
+
+Disassembly of <code object chercher_par_id at 0x000001A402FA1210, file "models/etudiant.py", line 33>:
+ 33           0 RESUME                   0
+
+ 35           2 NOP
+
+ 36           4 LOAD_GLOBAL              0 (Etudiant)
+             14 LOAD_ATTR                3 (NULL|self + collection)
+             34 CALL                     0
+             42 LOAD_ATTR                5 (NULL|self + find_one)
+             62 LOAD_CONST               1 ('_id')
+             64 LOAD_GLOBAL              7 (NULL + ObjectId)
+             74 LOAD_FAST                0 (id_)
+             76 CALL                     1
+             84 BUILD_MAP                1
+             86 CALL                     1
+             94 RETURN_VALUE
+        >>   96 PUSH_EXC_INFO
+
+ 37          98 LOAD_GLOBAL              8 (InvalidId)
+            108 CHECK_EXC_MATCH
+            110 POP_JUMP_IF_FALSE       14 (to 140)
+            112 POP_TOP
+
+ 38         114 LOAD_GLOBAL             11 (NULL + print)
+            124 LOAD_CONST               2 ('ID invalide.')
+            126 CALL                     1
+            134 POP_TOP
+
+ 39         136 POP_EXCEPT
+            138 RETURN_CONST             0 (None)
+
+ 37     >>  140 RERAISE                  0
+        >>  142 COPY                     3
+            144 POP_EXCEPT
+            146 RERAISE                  1
+ExceptionTable:
+  4 to 92 -> 96 [0]
+  96 to 134 -> 142 [1] lasti
+  140 to 140 -> 142 [1] lasti
+
+Disassembly of <code object chercher_par_matricule at 0x000001A402FD2450, file "models/etudiant.py", line 41>:
+ 41           0 RESUME                   0
+
+ 43           2 LOAD_GLOBAL              0 (Etudiant)
+             12 LOAD_ATTR                3 (NULL|self + collection)
+             32 CALL                     0
+             40 LOAD_ATTR                5 (NULL|self + find_one)
+             60 LOAD_CONST               1 ('matricule')
+             62 LOAD_FAST                0 (matricule)
+             64 BUILD_MAP                1
+             66 CALL                     1
+             74 RETURN_VALUE
+
+Disassembly of <code object modifier at 0x000001A402F7D5F0, file "models/etudiant.py", line 45>:
+ 45           0 RESUME                   0
+
+ 47           2 NOP
+
+ 48           4 LOAD_GLOBAL              0 (Etudiant)
+             14 LOAD_ATTR                3 (NULL|self + collection)
+             34 CALL                     0
+             42 LOAD_ATTR                5 (NULL|self + update_one)
+
+ 49          62 LOAD_CONST               1 ('_id')
+             64 LOAD_GLOBAL              7 (NULL + ObjectId)
+             74 LOAD_FAST                0 (id_)
+             76 CALL                     1
+             84 BUILD_MAP                1
+
+ 50          86 LOAD_CONST               2 ('$set')
+             88 LOAD_FAST                1 (data)
+             90 BUILD_MAP                1
+
+ 48          92 CALL                     2
+            100 STORE_FAST               2 (result)
+
+ 52         102 LOAD_FAST                2 (result)
+            104 LOAD_ATTR                8 (modified_count)
+            124 LOAD_CONST               3 (0)
+            126 COMPARE_OP              68 (>)
+            130 POP_JUMP_IF_FALSE       12 (to 156)
+
+ 53         132 LOAD_GLOBAL             11 (NULL + print)
+            142 LOAD_CONST               4 ('╔tudiant modifiÚ avec succÞs.')
+            144 CALL                     1
+            152 POP_TOP
+            154 JUMP_FORWARD            11 (to 178)
+
+ 55     >>  156 LOAD_GLOBAL             11 (NULL + print)
+            166 LOAD_CONST               5 ('Aucune modification effectuÚe.')
+            168 CALL                     1
+            176 POP_TOP
+
+ 56     >>  178 LOAD_FAST                2 (result)
+            180 LOAD_ATTR                8 (modified_count)
+            200 LOAD_CONST               3 (0)
+            202 COMPARE_OP              68 (>)
+            206 RETURN_VALUE
+        >>  208 PUSH_EXC_INFO
+
+ 57         210 LOAD_GLOBAL             12 (InvalidId)
+            220 CHECK_EXC_MATCH
+            222 POP_JUMP_IF_FALSE       14 (to 252)
+            224 POP_TOP
+
+ 58         226 LOAD_GLOBAL             11 (NULL + print)
+            236 LOAD_CONST               6 ('ID invalide.')
+            238 CALL                     1
+            246 POP_TOP
+
+ 59         248 POP_EXCEPT
+            250 RETURN_CONST             7 (False)
+
+ 57     >>  252 RERAISE                  0
+        >>  254 COPY                     3
+            256 POP_EXCEPT
+            258 RERAISE                  1
+ExceptionTable:
+  4 to 204 -> 208 [0]
+  208 to 246 -> 254 [1] lasti
+  252 to 252 -> 254 [1] lasti
+
+Disassembly of <code object supprimer at 0x000001A403001C30, file "models/etudiant.py", line 61>:
+ 61           0 RESUME                   0
+
+ 63           2 NOP
+
+ 64           4 LOAD_GLOBAL              0 (Etudiant)
+             14 LOAD_ATTR                3 (NULL|self + collection)
+             34 CALL                     0
+             42 LOAD_ATTR                5 (NULL|self + delete_one)
+             62 LOAD_CONST               1 ('_id')
+             64 LOAD_GLOBAL              7 (NULL + ObjectId)
+             74 LOAD_FAST                0 (id_)
+             76 CALL                     1
+             84 BUILD_MAP                1
+             86 CALL                     1
+             94 STORE_FAST               1 (result)
+
+ 68          96 LOAD_FAST                1 (result)
+             98 LOAD_ATTR               12 (deleted_count)
+            118 LOAD_CONST               4 (0)
+            120 COMPARE_OP              68 (>)
+            124 POP_JUMP_IF_FALSE       12 (to 150)
+
+ 69         126 LOAD_GLOBAL             11 (NULL + print)
+            136 LOAD_CONST               5 ('╔tudiant supprimÚ avec succÞs.')
+            138 CALL                     1
+            146 POP_TOP
+            148 JUMP_FORWARD            11 (to 172)
+
+ 71     >>  150 LOAD_GLOBAL             11 (NULL + print)
+            160 LOAD_CONST               6 ('╔tudiant non trouvÚ.')
+            162 CALL                     1
+            170 POP_TOP
+
+ 72     >>  172 LOAD_FAST                1 (result)
+            174 LOAD_ATTR               12 (deleted_count)
+            194 LOAD_CONST               4 (0)
+            196 COMPARE_OP              68 (>)
+            200 RETURN_VALUE
+        >>  202 PUSH_EXC_INFO
+
+ 65         204 LOAD_GLOBAL              8 (InvalidId)
+            214 CHECK_EXC_MATCH
+            216 POP_JUMP_IF_FALSE       14 (to 246)
+            218 POP_TOP
+
+ 66         220 LOAD_GLOBAL             11 (NULL + print)
+            230 LOAD_CONST               2 ('ID invalide.')
+            232 CALL                     1
+            240 POP_TOP
+
+ 67         242 POP_EXCEPT
+            244 RETURN_CONST             3 (False)
+
+ 65     >>  246 RERAISE                  0
+        >>  248 COPY                     3
+            250 POP_EXCEPT
+            252 RERAISE                  1
+ExceptionTable:
+  4 to 94 -> 202 [0]
+  202 to 240 -> 248 [1] lasti
+  246 to 246 -> 248 [1] lasti
