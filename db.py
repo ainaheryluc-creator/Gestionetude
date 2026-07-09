@@ -9,7 +9,7 @@ def connect():
     if client is not None:
         return True
     try:
-        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=10000)
+            client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=30000)
         db = client[DB_NAME]
         return True
     except Exception:
