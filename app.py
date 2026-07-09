@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from bson.objectid import ObjectId
@@ -1117,6 +1116,4 @@ def head_message_reply(id_etudiant):
     flash("Réponse envoyée à l'étudiant.", "success")
     return redirect(url_for("head_messages_conversation", id_etudiant=id_etudiant))
 
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, threaded=True)
+
